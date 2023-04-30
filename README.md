@@ -1,4 +1,2 @@
-# This is a markdown
-# What this project is about?
-
-## Web project for my own personal page
+## Kostyukov Konstantin's web portfolio
+This small resource contains apps I have created during my self-study.
