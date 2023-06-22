@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import send_email
 
 st.set_page_config(layout='wide')
 
@@ -10,37 +11,102 @@ with col1:
     with col11:
         st.write("")
     with col12:
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
         st.image("images/photo.png", use_column_width='auto')
     with col13:
         st.write("")
 
 with col2:
-    st.header("Konstantin Kostyukov")
+    st.header("Welcome!")
     content = """
-    Write smth
+    \b My name is Konstantin and I am delighted to welcome you on my personal web site.\n
+    \b It is my first web project that was created as a part of python programming self education course.\n
+    \b Big number of projects are still under development but now you are able
+    to check first of them and write an email in a special form available in the sidebar.\n
+    \b Best regards!\n
+    KK
     """
     # st.write(content)
     st.info(content)
 
-content2 = """
-Здание администрации парка Горького в Москве (улица Крымский Вал 9, строение 45) — 
-"""
-st.write(content2)
 
-col3, empty_col2, col4 = st.columns([2.0, 0.2, 2.0])  # задаем отношение ширины разных колонок
+with st.expander("Quick Bio"):
+    tab1, tab2, tab3, tab4 = st.tabs(["Education", "Experience", "Additional", "Download"])
+    with tab1:
+        st.subheader('Education')
+        col3, col4, col5 = st.columns([1, 4, 1])
+        with col3:
+            st.write('2021<br><br>', unsafe_allow_html=True)
+            st.write('2013 – 2014<br><br>', unsafe_allow_html=True)
+            st.write('2010 – 2013<br><br>', unsafe_allow_html=True)
+            st.write('2009 – 2013')
+        with col4:
+            st.write('CFA INSTITUTE<br>'
+                     'Chartered Financial Analyst',
+                     unsafe_allow_html=True)
+            st.write("FORDHAM UNIVERSITY, GRADUATE SCHOOL OF BUSINESS ADMINISTRATION<br>"
+                     "MSc program, Business Enterprise", unsafe_allow_html=True)
+            st.write('UNIVERSITY OF LONDON, EXTERNAL PROGRAM<br>'
+                     'BSc Economics and Finance', unsafe_allow_html=True)
+            st.write('HIGHER SCHOOL OF ECONOMICS<br> INTERNATIONAL COLLEGE OF ECONOMICS AND FINANCE<br>'
+                     'BSc Economics', unsafe_allow_html=True)
+        with col5:
+            st.write('Moscow<br><br>', unsafe_allow_html=True)
+            st.write('New York<br><br>', unsafe_allow_html=True)
+            st.write('Moscow<br><br>', unsafe_allow_html=True)
+            st.write('Moscow')
+    with tab2:
+        st.subheader('Experience')
+        col6, col7, col8 = st.columns([1, 4, 1])
+        with col6:
+            st.write('<br>October 2021<br><br><br>'
+                     'May 2019<br> - <br>October 2021<br><br>'
+                     'June 2015<br> - <br>May 2019<br><br>',
+                     unsafe_allow_html=True)
+        with col7:
+            st.write('<b>THE CENTRAL BANK OF THE RUSSIAN FEDERATION</b><br>'
+                     'MARKET OPERATIONS DEPARTMENT<br>'
+                     'Trader FX reserves<br><br>'
+                     'MARKET OPERATIONS DEPARTMENT<br>'
+                     'Lead analyst at pledge facility formation division<br><br><br>'
+                     f'COLLECTIVE INVESTMENT AND TRUST MANAGEMENT DEPARTMENT<br>'
+                     'Lead expert',
+                     unsafe_allow_html=True)
+        with col8:
+            st.write('<br>Moscow<br><br><br>'
+                     'Moscow<br><br><br><br>'
+                     'Moscow',
+                     unsafe_allow_html=True)
+    with tab3:
+        st.subheader('Additional')
+        col9, col10 = st.columns([1, 5])
+        with col9:
+            st.write('Membership<br><br>'
+                     'Certificates<br><br><br><br>'
+                     'Computer skills',
+                     unsafe_allow_html=True)
+        with col10:
+            st.write('CFA Russia Association Board Member<br><br>'
+                     'Python for Finance: Investment Fundamentals & Data Analytics (Udemy - Online Courses)<br>'
+                     'The Python Mega Course: Learn Python in 60 Days with 20 Apps (Udemy - Online Courses)<br>'
+                     'Agence de Transfer de Technologie Financier Certificate: Risk modeling and stress testing<br><br>'
+                     'MS Office VBA<br>'
+                     'Bloomberg terminal<br>'
+                     'Python - Beginner',
+                     unsafe_allow_html=True)
+    with tab4:
+        st.subheader('Download resume')
+        st.write('You can download detailed resume by clicking the button below')
+        st.write("Please also be informed that you can send me a direct email through a special form "
+                 "available in the sidebar.")
+        with open('Konstantin_Kostyukov_resume_2023.pdf', 'rb') as resume_file:
+            button = st.download_button('Download resume', resume_file,
+                               file_name='Konstantin_Kostyukov_resume_2023.pdf',
+                               key='download')
+        if button:
+            st.write("Thanks for downloading, let's be in touch!")
 
-df = pd.read_csv("data.csv", sep=';')  # чтение файла с данными
 
-with col3:
-    for index, row in df[:10].iterrows():  # метод итерации по строкам
-        st.header(row['title'])
-        st.write(row["description"])
-        st.image("images/" + row["image"])
-        st.write(f"[Source Code]({row['url']})")  # special syntaxis for links
-
-with col4:
-    for index, row in df[10:].iterrows():
-        st.header(row['title'])
-        st.write(row["description"])
-        st.image("images/" + row["image"])
-        st.write(f"[Source Code]({row['url']})")  # special syntaxis for links
