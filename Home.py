@@ -1,6 +1,5 @@
 import streamlit as st
-import pandas as pd
-import send_email
+from send_email import send_email
 
 st.set_page_config(layout='wide')
 
@@ -22,11 +21,11 @@ with col1:
 with col2:
     st.header("Welcome!")
     content = """
-    \b My name is Konstantin and I am delighted to welcome you on my personal web site.\n
-    \b It is my first web project that was created as a part of python programming self education course.\n
-    \b Big number of projects are still under development but now you are able
-    to check first of them and write an email in a special form available in the sidebar.\n
-    \b Best regards!\n
+    My name is Konstantin and I am delighted to welcome you on my personal web site.\n
+    It is my first web project that was created as a part of python education course.\n
+    Some projects are still under development, but you are able
+    to check first of them and contact me via a special form available in the sidebar.\n
+    
     KK
     """
     # st.write(content)
@@ -40,7 +39,7 @@ with st.expander("Quick Bio"):
         col3, col4, col5 = st.columns([1, 4, 1])
         with col3:
             st.write('2021<br><br>', unsafe_allow_html=True)
-            st.write('2013 – 2014<br><br>', unsafe_allow_html=True)
+            st.write('2013 – 2014<br><br><br>', unsafe_allow_html=True)
             st.write('2010 – 2013<br><br>', unsafe_allow_html=True)
             st.write('2009 – 2013')
         with col4:
@@ -55,7 +54,7 @@ with st.expander("Quick Bio"):
                      'BSc Economics', unsafe_allow_html=True)
         with col5:
             st.write('Moscow<br><br>', unsafe_allow_html=True)
-            st.write('New York<br><br>', unsafe_allow_html=True)
+            st.write('New York<br><br><br>', unsafe_allow_html=True)
             st.write('Moscow<br><br>', unsafe_allow_html=True)
             st.write('Moscow')
     with tab2:
@@ -69,7 +68,7 @@ with st.expander("Quick Bio"):
         with col7:
             st.write('<b>THE CENTRAL BANK OF THE RUSSIAN FEDERATION</b><br>'
                      'MARKET OPERATIONS DEPARTMENT<br>'
-                     'Trader FX reserves<br><br>'
+                     'Fixed Income Trader<br><br>'
                      'MARKET OPERATIONS DEPARTMENT<br>'
                      'Lead analyst at pledge facility formation division<br><br><br>'
                      f'COLLECTIVE INVESTMENT AND TRUST MANAGEMENT DEPARTMENT<br>'
@@ -85,21 +84,16 @@ with st.expander("Quick Bio"):
         col9, col10 = st.columns([1, 5])
         with col9:
             st.write('Membership<br><br>'
-                     'Certificates<br><br><br><br>'
-                     'Computer skills',
+                     'Certificates<br><br><br><br>',
                      unsafe_allow_html=True)
         with col10:
             st.write('CFA Russia Association Board Member<br><br>'
                      'Python for Finance: Investment Fundamentals & Data Analytics (Udemy - Online Courses)<br>'
-                     'The Python Mega Course: Learn Python in 60 Days with 20 Apps (Udemy - Online Courses)<br>'
-                     'Agence de Transfer de Technologie Financier Certificate: Risk modeling and stress testing<br><br>'
-                     'MS Office VBA<br>'
-                     'Bloomberg terminal<br>'
-                     'Python - Beginner',
+                     'The Python Mega Course: Learn Python in 60 Days with 20 Apps (Udemy - Online Courses)<br>',
                      unsafe_allow_html=True)
     with tab4:
         st.subheader('Download resume')
-        st.write('You can download detailed resume by clicking the button below')
+        st.write('You can download full pdf resume by clicking the button below')
         st.write("Please also be informed that you can send me a direct email through a special form "
                  "available in the sidebar.")
         with open('Konstantin_Kostyukov_resume_2023.pdf', 'rb') as resume_file:
@@ -108,5 +102,6 @@ with st.expander("Quick Bio"):
                                key='download')
         if button:
             st.write("Thanks for downloading, let's be in touch!")
+            send_email('Your resume was downloaded')
 
 

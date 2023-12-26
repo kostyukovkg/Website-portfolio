@@ -10,14 +10,14 @@ col1, empty_col1, col2 = st.columns([2.0, 0.2, 2.0])  # задаем отнош�
 df = pd.read_csv("data.csv", sep=';')  # чтение файла с данными
 
 with col1:
-    for index, row in df[:10].iterrows():  # метод итерации по строкам
+    for index, row in df[:4].iterrows():  # метод итерации по строкам
         st.subheader(row['title'])
         st.write(row["description"])
         st.image("images/" + row["image"])
-        st.write(f"[Source Code]({row['url']})")  # special syntax for links
+        st.write(f"[Website]({row['url']})")  # special syntax for links
 
 with col2:
-    for index, row in df[10:].iterrows():
+    for index, row in df[4:7].iterrows():
         st.subheader(row['title'])
         st.write(row["description"])
         st.image("images/" + row["image"])

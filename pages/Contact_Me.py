@@ -15,7 +15,7 @@ with st.form(key="main_form"):
     From: {user_name}
     {user_email}
     """
-    #message + f"\n\n{user_name}" + "\n" + user_email
+
     button = st.form_submit_button('Send email')  # special button that submits text for the form.
     # text can be sent to a database or by email etc.
     if button:
