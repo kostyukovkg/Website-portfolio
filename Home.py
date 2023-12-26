@@ -39,7 +39,7 @@ with st.expander("Quick Bio"):
         col3, col4, col5 = st.columns([1, 4, 1])
         with col3:
             st.write('2021<br><br>', unsafe_allow_html=True)
-            st.write('2013 – 2014<br><br><br>', unsafe_allow_html=True)
+            st.write('2013 – 2014<br><br>', unsafe_allow_html=True)
             st.write('2010 – 2013<br><br>', unsafe_allow_html=True)
             st.write('2009 – 2013')
         with col4:
