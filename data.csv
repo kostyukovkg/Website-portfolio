@@ -1,7 +1,7 @@
 title;description;url;image
 Todo App;A distraction-free web app to help you focus on creating and completing tasks.;https://kostyukovkg-my-todo-app-web-unn16n.streamlit.app;1.png
 Visual Weather Forecast;A data web app that visualizes the weather forecast for the next five days of any city.;https://kkg-weather-forecast-app.streamlit.app/;16.png
-Email Your Webcam Shot;A website that allows you to take a shot from your computer webcam and send it to an email.;https://kkg-photo-booth.streamlit.app/;11.png
+Photo Booth;A website that allows you to take a shot from your computer webcam and send it to an email.;https://kkg-photo-booth.streamlit.app/;11.png
 Astronomy Picture of the Day; Web site that updates everyday photo + description from NASA API.;https://astronomy-picture-of-the-day.streamlit.app/;21.jpg
 PDF Templates;A script that generates PDF templates of multiple pages given some predefined guidelines.;https://github.com/kostyukovkg/pdf-template;3.png
 Google News API request;A script that returns news from Google News API based on requested topics and news sources.;https://github.com/kostyukovkg/Daily-news-from-gnews-api;5.png
