@@ -98,7 +98,7 @@ with st.expander("Quick Bio"):
                  "available in the sidebar.")
         with open('Konstantin_Kostyukov_resume_2023.pdf', 'rb') as resume_file:
             button = st.download_button('Download resume', resume_file,
-                               file_name='Konstantin_Kostyukov_resume_2023.pdf',
+                               file_name='Konstantin_Kostyukov_resume_2024.pdf',
                                key='download')
         if button:
             st.write("Thanks for downloading, let's be in touch!")
