@@ -96,7 +96,7 @@ with st.expander("Quick Bio"):
         st.write('You can download full pdf resume by clicking the button below')
         st.write("Please also be informed that you can send me a direct email through a special form "
                  "available in the sidebar.")
-        with open('Konstantin_Kostyukov_resume_2023.pdf', 'rb') as resume_file:
+        with open('Konstantin_Kostyukov_resume_2024.pdf', 'rb') as resume_file:
             button = st.download_button('Download resume', resume_file,
                                file_name='Konstantin_Kostyukov_resume_2024.pdf',
                                key='download')
